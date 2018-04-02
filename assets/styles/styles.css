@@ -246,8 +246,53 @@ h2 {
     color: #fff;
 }
 
+
+
+.section-contact {
+    background-color: #e5e5e5;
+    text-align: center;
+    padding: 15px;
+}
+
+
+.contact-data label {
+    float: left;
+    width: 33%;
+    text-align: left;
+    padding: 6px;
+}
+
+.contact-data input {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.contact-client {
+    padding: 25px;
+}
+
+.contact-message label {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-message textarea {
+    display: block;
+    width: 100%;
+}
+
+.contact-submit {
+    float: right;
+    margin: 10px;
+    padding: 15px;
+}
+
 .clearfix::after {
     content: '';
     display: block;
     clear: both;
 }
+
+

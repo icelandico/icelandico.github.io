@@ -257,17 +257,22 @@
     </section>
     <section class="section-contact" id="contact">
         <h2>Contact</h2>
-        <div>
-            <label for="name">Name</label>
+        <div class="contact-data clearfix">
+            <label>
+                Name
             <input id="name" type="text" required>
+            </label>
+            <label>
+                Phone
+            <input id="phone" required>
+            </label>
 
-            <label for="phone" >Phone</label>
-            <input id="phone" type="number" required>
-
-            <label for="email">Email</label>
+            <label>
+                Email
             <input id="email" type="email">
+            </label>
         </div>
-        <div>
+        <div class="contact-client">
             <label for="role-client">Client</label>
             <input type="radio" value="client" id="role-client">
             <label for="role-investor">Investor</label>
@@ -278,10 +283,13 @@
             <label for="contact-sms">Contact via SMS</label>
             <input id="contact-sms" type="checkbox">
         </div>
-        <div>
-            <label for="message">Message</label>
+        <div class="contact-message">
+            <label>
+                Message
             <textarea id="message" rows="10"></textarea>
+            </label>
         </div>
+        <button class="contact-submit">Contact us</button>
     </section>
 </main>
 <footer class="main-footer">
