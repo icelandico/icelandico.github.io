@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     /*outline: 1px solid red;*/
+    font-family: "Lato Light";
 }
 
 html, body {
@@ -23,14 +24,12 @@ html, body {
     height: 80px;
     width: 80px;
     margin-left: 100px;
-
 }
 
 .navigation-list {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-
 }
 
 .navigation-list-item {
@@ -40,7 +39,6 @@ html, body {
     list-style: none;
     margin-right: -5px;
     vertical-align: middle;
-
 }
 
 .navigation-list-item a {
@@ -129,28 +127,63 @@ h2 {
     overflow: hidden;
     font-size: 1.5vh;
     text-align: left;
-
 }
 
 .blog-photo {
     height: 50%;
     border-bottom: 1px solid #c3c3c3;
 }
+
 .blog-img {
     width: 100%;
     height: 100%;
 }
 
+.blog-text h2 {
+    text-align: left;
+    color: #01baac;
+}
+
 .blog-text, .blog-footer {
     padding: 5px;
-
 }
 
 .blog-footer-right {
     float: right;
 }
 
+.add-info {
+    color: #01baac;
+}
 
+.section-company-experience {
+    width: 100%;
+    background-color: #01baac;
+    color: #fff;
+    font-size: 15px;
+}
+
+.section-company-experience-inner {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.company-experience-container {
+    text-align: center;
+    display: inline-block;
+    width: 32%;
+    margin: 15px 2px;
+}
+
+.font-icon {
+    font-size: 8em;
+    background-color: #000;
+    margin: 5px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 0 0 2px #fff;
+    border: 15px solid #01baac;
+}
 
 .member-container {
     display: inline-block;
@@ -159,15 +192,12 @@ h2 {
     text-align: center;
     border: 1px solid #c3c3c3;
     position: relative;
-
-
 }
 
 .member-photo {
     height: 45%;
     border-bottom: 1px solid #c3c3c3;
 }
-
 
 .member-img {
     width: 100%;
@@ -179,13 +209,13 @@ h2 {
     border: 1px solid #c3c3c3;
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: 37%;
     transform: translateX(-50%);
     text-align: center;
     font-size: 1vh;
     background-color: #fff;
     padding: 2px;
-    color: #1dcb96;
+    color: #01baac;
 }
 
 .member-name p {
@@ -198,9 +228,9 @@ h2 {
 }
 
 .button-profile {
-    border: 2px solid #1dcb96;
+    border: 2px solid #01baac;
     background-color: #fff;
-    color: #1dcb96;
+    color: #01baac;
     padding: 10px;
     width: 60%;
     text-transform: uppercase;
@@ -209,11 +239,10 @@ h2 {
     left: 50%;
     transform: translateX(-50%);
     font-weight: bold;
-
 }
 
 .button-profile:hover {
-    background-color: #1dcb96;
+    background-color: #01baac;
     color: #fff;
 }
 
