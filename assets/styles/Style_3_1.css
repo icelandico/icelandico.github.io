@@ -1,0 +1,29 @@
+.row {
+    margin: 10px 0;
+}
+
+[class^="col"] {
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+.background {
+    height: 100%;
+}
+
+.top{
+    background: #3772aa;
+}
+
+.mid-upper {
+    background: chocolate;
+}
+
+.mid-lower {
+    background: darkgreen;
+}
+
+.bottom {
+    background: darkred;
+}
