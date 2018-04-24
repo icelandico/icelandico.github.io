@@ -49,7 +49,6 @@
     .top, .mid, .bottom {
         flex-direction: row;
     }
-
     .item-bottom {
         flex: 20%;
     }

@@ -1,0 +1,21 @@
+body {
+    margin: 0 auto;
+    width: 50%;
+    background: honeydew;
+    text-align: center;
+}
+
+div {
+    margin: 1%;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin: 5% 3%;
+    background: chocolate;
+    text-decoration: none;
+    padding: 15px;
+    color: honeydew;
+    box-shadow: 3px 3px #363636;
+}
