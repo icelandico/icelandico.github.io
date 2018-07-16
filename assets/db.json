@@ -6,6 +6,34 @@
       "lastName": "Kreft",
       "phoneNumber": "500-600-700",
       "email": "seba@mail.com"
+    },
+    {
+      "firstName": "Andrzej",
+      "lastName": "Alfabetyczny",
+      "phoneNumber": "444 555 123",
+      "email": "yeti@gmail.com",
+      "id": 2
+    },
+    {
+      "firstName": "Michal",
+      "lastName": "Derdkowski",
+      "phoneNumber": "123 456 765",
+      "email": "buu@wp.pl",
+      "id": 3
+    },
+    {
+      "firstName": "Michal",
+      "lastName": "Derdkowski",
+      "phoneNumber": "123 456 765",
+      "email": "buu@wp.pl",
+      "id": 4
+    },
+    {
+      "firstName": "Arek",
+      "lastName": "Kolumb",
+      "phoneNumber": "567 908",
+      "email": "yourmail@onet.pl",
+      "id": 5
     }
   ]
 }

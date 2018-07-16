@@ -1,8 +1,8 @@
 var contactsContainer = document.getElementById('contacts');
-var firstNameInput = document.querySelector('#input-first-name');
-var lastNameInput = document.querySelector('#input-last-name');
-var phoneInput = document.querySelector('#input-phone');
-var mailInput = document.querySelector('#input-mail');
+var firstNameInput = document.querySelector('#first-name');
+var lastNameInput = document.querySelector('#last-name');
+var phoneInput = document.querySelector('#phone');
+var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
 
 addContactButton.addEventListener('click', addContact);
@@ -51,7 +51,7 @@ function addContact() {
     phoneNumber: phoneInput.value,
     email: mailInput.value
   };
-
+  clearInputValues();
   fetch(
     'http://localhost:3000/contacts', {
       method: 'POST',
@@ -62,4 +62,9 @@ function addContact() {
     }).then(function () {
       syncContacts()
   })
+}
+
+function clearInputValues() {
+  var menuInputsValue = Array.from(document.querySelectorAll('.menu-input'));
+  menuInputsValue.forEach(input => input.value = '')
 }
