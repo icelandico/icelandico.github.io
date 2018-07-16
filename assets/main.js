@@ -25,6 +25,7 @@ function syncContacts() {
 
 function displayContacts(contacts) {
   contactsContainer.innerHTML = '';
+  contacts.sort(sortContacts);
   contacts.forEach(function (contact) {
     createContactStructure(contact)
   })

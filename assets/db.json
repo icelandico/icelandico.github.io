@@ -34,6 +34,13 @@
       "phoneNumber": "567 908",
       "email": "yourmail@onet.pl",
       "id": 5
+    },
+    {
+      "firstName": "Mikołaj",
+      "lastName": "Frankowski",
+      "phoneNumber": "123 321 098",
+      "email": "m.mike@wp.pl",
+      "id": 6
     }
   ]
 }
