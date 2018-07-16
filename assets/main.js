@@ -1,6 +1,13 @@
 var contactsContainer = document.getElementById('contacts');
+var firstNameInput = document.querySelector('#input-first-name');
+var lastNameInput = document.querySelector('#input-last-name');
+var phoneInput = document.querySelector('#input-phone');
+var mailInput = document.querySelector('#input-mail');
+var addContactButton = document.querySelector('.add-contact');
 
-syncContacts()
+addContactButton.addEventListener('click', addContact);
+
+syncContacts();
 
 function getContacts() {
   return fetch (
@@ -35,4 +42,24 @@ function createContactStructure(contact) {
   contactElement.append(phoneNumber);
   contactElement.append(email);
   contactsContainer.append(contactElement)
+}
+
+function addContact() {
+  var contact = {
+    firstName: firstNameInput.value,
+    lastName: lastNameInput.value,
+    phoneNumber: phoneInput.value,
+    email: mailInput.value
+  };
+
+  fetch(
+    'http://localhost:3000/contacts', {
+      method: 'POST',
+      body: JSON.stringify(contact),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function () {
+      syncContacts()
+  })
 }
