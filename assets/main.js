@@ -4,8 +4,10 @@ var lastNameInput = document.querySelector('#last-name');
 var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
+var deleteContactButton;
 
 addContactButton.addEventListener('click', addContact);
+deleteContactButton.addEventListener('click', removeContact);
 
 syncContacts();
 
@@ -36,12 +38,16 @@ function createContactStructure(contact) {
   var name = document.createElement('h1');
   var phoneNumber = document.createElement('p');
   var email = document.createElement('p');
+  deleteContactButton = document.createElement('button');
+  deleteContactButton.classList.add('delete-single-contact');
+  deleteContactButton.innerHTML = 'Remove contact';
   name.innerHTML = contact.firstName + ' ' + contact.lastName;
   phoneNumber.innerHTML = contact.phoneNumber;
   email.innerHTML = contact.email;
   contactElement.append(name);
   contactElement.append(phoneNumber);
   contactElement.append(email);
+  contactElement.append(deleteContactButton);
   contactsContainer.append(contactElement)
 }
 
@@ -62,6 +68,19 @@ function addContact() {
       }
     }).then(function () {
       syncContacts()
+  })
+}
+
+function removeContact() {
+  fetch(
+    'http://localhost:3000/contacts/' + contact.id, {
+      method: 'DELETE',
+      body: JSON.stringify(contact),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function () {
+    syncContacts()
   })
 }
 
