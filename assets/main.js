@@ -68,3 +68,12 @@ function clearInputValues() {
   var menuInputsValue = Array.from(document.querySelectorAll('.menu-input'));
   menuInputsValue.forEach(input => input.value = '')
 }
+
+function sortContacts(contactA, contactB) {
+  if (contactA.firstName < contactB.firstName) {
+    return -1;
+  } else if (contactA.firstName > contactB.firstName) {
+    return 1;
+  }
+  return 0;
+}
