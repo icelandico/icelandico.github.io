@@ -1,13 +1,6 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "firstName": "Sebastian",
-      "lastName": "Kreft",
-      "phoneNumber": "500-600-700",
-      "email": "seba@mail.com"
-    },
-    {
       "firstName": "Andrzej",
       "lastName": "Alfabetyczny",
       "phoneNumber": "444 555 123",
@@ -22,25 +15,11 @@
       "id": 3
     },
     {
-      "firstName": "Michal",
-      "lastName": "Derdkowski",
-      "phoneNumber": "123 456 765",
-      "email": "buu@wp.pl",
-      "id": 4
-    },
-    {
-      "firstName": "Arek",
-      "lastName": "Kolumb",
-      "phoneNumber": "567 908",
-      "email": "yourmail@onet.pl",
-      "id": 5
-    },
-    {
-      "firstName": "Mikołaj",
-      "lastName": "Frankowski",
-      "phoneNumber": "123 321 098",
-      "email": "m.mike@wp.pl",
-      "id": 6
+      "firstName": "Marian",
+      "lastName": "Brazylijski",
+      "phoneNumber": "666 112 432",
+      "email": "brazylia@gfk.pl",
+      "id": 7
     }
   ]
 }

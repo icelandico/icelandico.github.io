@@ -4,12 +4,10 @@ var lastNameInput = document.querySelector('#last-name');
 var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
-var deleteContactButton;
-
-addContactButton.addEventListener('click', addContact);
-deleteContactButton.addEventListener('click', removeContact);
 
 syncContacts();
+
+addContactButton.addEventListener('click', addContact);
 
 function getContacts() {
   return fetch (
@@ -38,9 +36,12 @@ function createContactStructure(contact) {
   var name = document.createElement('h1');
   var phoneNumber = document.createElement('p');
   var email = document.createElement('p');
-  deleteContactButton = document.createElement('button');
+  var deleteContactButton = document.createElement('button');
   deleteContactButton.classList.add('delete-single-contact');
   deleteContactButton.innerHTML = 'Remove contact';
+  deleteContactButton.addEventListener('click', function() {
+    removeContact(contact.id)
+  });
   name.innerHTML = contact.firstName + ' ' + contact.lastName;
   phoneNumber.innerHTML = contact.phoneNumber;
   email.innerHTML = contact.email;
@@ -71,11 +72,10 @@ function addContact() {
   })
 }
 
-function removeContact() {
+function removeContact(id) {
   fetch(
-    'http://localhost:3000/contacts/' + contact.id, {
+    'http://localhost:3000/contacts/' + id, {
       method: 'DELETE',
-      body: JSON.stringify(contact),
       headers: {
         'Content-Type': 'application/json'
       }
