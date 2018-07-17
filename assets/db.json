@@ -27,20 +27,6 @@
       "phoneNumber": "098 765 324",
       "email": "yu@mao.com",
       "id": 9
-    },
-    {
-      "firstName": "Antoni",
-      "lastName": "Motyka",
-      "phoneNumber": "123",
-      "email": "mail",
-      "id": 10
-    },
-    {
-      "firstName": "Ariel",
-      "lastName": "Czyżewski",
-      "phoneNumber": "000 125 555",
-      "email": "uros@wp.pl",
-      "id": 11
     }
   ]
 }

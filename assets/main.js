@@ -4,6 +4,7 @@ var lastNameInput = document.querySelector('#last-name');
 var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
+var inputs = Array.from(document.querySelectorAll('label'));
 
 syncContacts();
 
@@ -37,13 +38,15 @@ function createContactStructure(contact) {
   var phoneNumber = document.createElement('p');
   var email = document.createElement('p');
   var deleteContactButton = document.createElement('button');
+  var editContactButton = document.createElement('button');
   putTextInNode(name, phoneNumber, email, contact);
   createDeleteContactButton(deleteContactButton, contact);
-  createEditContactButton();
+  createEditContactButton(editContactButton, contactElement);
   contactElement.append(name);
   contactElement.append(phoneNumber);
   contactElement.append(email);
   contactElement.append(deleteContactButton);
+  contactElement.append(editContactButton);
   contactsContainer.append(contactElement)
 }
 
@@ -61,10 +64,25 @@ function createDeleteContactButton(button, contact) {
   });
 }
 
-function createEditContactButton() {
-  var editContactButton = document.createElement('button');
-  editContactButton.classList.add('edit-single-contact');
-  editContactButton.innerHTML = 'Edit contact';
+function createEditContactButton(button, contactElement) {
+  button.classList.add('edit-single-contact');
+  button.innerHTML = 'Edit contact';
+  button.addEventListener('click', function() {
+    createEditContactForm(contactElement)
+  })
+}
+
+function createEditContactForm(node) {
+  var editForm = document.createElement('div');
+  inputs.forEach(function (item) {
+    console.log(item)
+    var label = document.createElement('label');
+    var input = document.createElement('input');
+    label.innerText = item.innerText;
+    label.appendChild(input);
+    editForm.appendChild(label)
+  });
+  node.appendChild(editForm)
 }
 
 function addContact() {
