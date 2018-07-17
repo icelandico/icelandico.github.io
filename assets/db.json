@@ -1,13 +1,6 @@
 {
   "contacts": [
     {
-      "firstName": "Andrzej",
-      "lastName": "Alfabetyczny",
-      "phoneNumber": "444 555 123",
-      "email": "yeti@gmail.com",
-      "id": 2
-    },
-    {
       "firstName": "Michal",
       "lastName": "Derdkowski",
       "phoneNumber": "123 456 765",
@@ -20,6 +13,34 @@
       "phoneNumber": "666 112 432",
       "email": "brazylia@gfk.pl",
       "id": 7
+    },
+    {
+      "firstName": "Zygmunt",
+      "lastName": "Stary",
+      "phoneNumber": "025 231 46",
+      "email": "zygu@mail.pl",
+      "id": 8
+    },
+    {
+      "firstName": "Franek",
+      "lastName": "Kimono",
+      "phoneNumber": "098 765 324",
+      "email": "yu@mao.com",
+      "id": 9
+    },
+    {
+      "firstName": "Antoni",
+      "lastName": "Motyka",
+      "phoneNumber": "123",
+      "email": "mail",
+      "id": 10
+    },
+    {
+      "firstName": "Ariel",
+      "lastName": "Czyżewski",
+      "phoneNumber": "000 125 555",
+      "email": "uros@wp.pl",
+      "id": 11
     }
   ]
 }

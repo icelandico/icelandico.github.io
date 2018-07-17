@@ -37,19 +37,34 @@ function createContactStructure(contact) {
   var phoneNumber = document.createElement('p');
   var email = document.createElement('p');
   var deleteContactButton = document.createElement('button');
-  deleteContactButton.classList.add('delete-single-contact');
-  deleteContactButton.innerHTML = 'Remove contact';
-  deleteContactButton.addEventListener('click', function() {
-    removeContact(contact.id)
-  });
-  name.innerHTML = contact.firstName + ' ' + contact.lastName;
-  phoneNumber.innerHTML = contact.phoneNumber;
-  email.innerHTML = contact.email;
+  putTextInNode(name, phoneNumber, email, contact);
+  createDeleteContactButton(deleteContactButton, contact);
+  createEditContactButton();
   contactElement.append(name);
   contactElement.append(phoneNumber);
   contactElement.append(email);
   contactElement.append(deleteContactButton);
   contactsContainer.append(contactElement)
+}
+
+function putTextInNode(name, phone, mail, contact) {
+  name.innerHTML = contact.firstName + ' ' + contact.lastName;
+  phone.innerHTML = contact.phoneNumber;
+  mail.innerHTML = contact.email;
+}
+
+function createDeleteContactButton(button, contact) {
+ button.classList.add('delete-single-contact');
+ button.innerHTML = 'Remove contact';
+ button.addEventListener('click', function() {
+    removeContact(contact.id)
+  });
+}
+
+function createEditContactButton() {
+  var editContactButton = document.createElement('button');
+  editContactButton.classList.add('edit-single-contact');
+  editContactButton.innerHTML = 'Edit contact';
 }
 
 function addContact() {
@@ -90,9 +105,9 @@ function clearInputValues() {
 }
 
 function sortContacts(contactA, contactB) {
-  if (contactA.firstName < contactB.firstName) {
+  if (contactA.lastName < contactB.lastName) {
     return -1;
-  } else if (contactA.firstName > contactB.firstName) {
+  } else if (contactA.lastName > contactB.lastName) {
     return 1;
   }
   return 0;
