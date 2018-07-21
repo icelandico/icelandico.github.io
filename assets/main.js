@@ -4,7 +4,7 @@ var lastNameInput = document.querySelector('#last-name');
 var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
-var inputs = Array.from(document.querySelectorAll('label'));
+var inputs = Array.from(document.querySelectorAll('.input-form'));
 
 syncContacts();
 
@@ -39,14 +39,16 @@ function createContactStructure(contact) {
   var email = document.createElement('p');
   var deleteContactButton = document.createElement('button');
   var editContactButton = document.createElement('button');
+  var editPanel = createEditContactForm();
   putTextInNode(name, phoneNumber, email, contact);
   createDeleteContactButton(deleteContactButton, contact);
-  createEditContactButton(editContactButton, contactElement);
+  createEditContactButton(editContactButton);
   contactElement.append(name);
   contactElement.append(phoneNumber);
   contactElement.append(email);
   contactElement.append(deleteContactButton);
   contactElement.append(editContactButton);
+  contactElement.append(editPanel);
   contactsContainer.append(contactElement)
 }
 
@@ -64,25 +66,34 @@ function createDeleteContactButton(button, contact) {
   });
 }
 
-function createEditContactButton(button, contactElement) {
+function createEditContactButton(button) {
   button.classList.add('edit-single-contact');
   button.innerHTML = 'Edit contact';
   button.addEventListener('click', function() {
-    createEditContactForm(contactElement)
+    showEditContactForm()
   })
 }
 
-function createEditContactForm(node) {
+function createEditContactForm() {
   var editForm = document.createElement('div');
+  editForm.classList.add('contact-edit');
+  editForm.classList.add('hidden');
   inputs.forEach(function (item) {
-    console.log(item)
     var label = document.createElement('label');
     var input = document.createElement('input');
     label.innerText = item.innerText;
     label.appendChild(input);
     editForm.appendChild(label)
   });
-  node.appendChild(editForm)
+  var saveButton = document.createElement('button');
+  saveButton.innerHTML = 'Save edits';
+  editForm.append(saveButton);
+  return editForm
+}
+
+function showEditContactForm() {
+  var editFormDiv = document.querySelector('.contact-edit');
+  editFormDiv.classList.toggle('hidden')
 }
 
 function addContact() {
