@@ -1,18 +1,18 @@
 {
   "contacts": [
     {
-      "firstName": "Michal",
-      "lastName": "Derdkowski",
-      "phoneNumber": "123 456 765",
-      "email": "buu@wp.pl",
-      "id": 3
+      "firstName": "Bolesław",
+      "lastName": "Śmiały",
+      "phoneNumber": "901 123",
+      "email": "smialy@wp.pl",
+      "id": 9
     },
     {
-      "firstName": "Zygmunt",
-      "lastName": "Stary",
-      "phoneNumber": "025 231 46",
-      "email": "zygu@mail.pl",
-      "id": 8
+      "firstName": "Urszul",
+      "lastName": "Florencja",
+      "phoneNumber": "891 981 213",
+      "email": "asd@wo.pl",
+      "id": 10
     }
   ]
 }
