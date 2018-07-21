@@ -107,7 +107,10 @@ function createSaveEditsOption(contact) {
 
 function showEditContactForm(item) {
   var clickedDiv = document.getElementById(item);
-  clickedDiv.classList.toggle('hidden')
+  var editForms = Array.from(document.querySelectorAll('.contact-edit'));
+  clickedDiv.classList.toggle('hidden');
+  editForms.forEach(div => div.id === clickedDiv.id ? true : div.classList.add('hidden'));
+
 }
 
 function addContact() {
