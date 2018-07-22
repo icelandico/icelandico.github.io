@@ -4,10 +4,12 @@ var lastNameInput = document.querySelector('#last-name');
 var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
+var phoneInput = document.querySelector('#phone');
 
 syncContacts();
 
 addContactButton.addEventListener('click', validateAddedContact);
+phoneInput.addEventListener('focusout', validatePhone);
 
 function getContacts() {
   return fetch (
@@ -199,3 +201,15 @@ function validateEditedContact() {
   };
   return editInputsValues.some(everyAreFilled)
 }
+
+function validatePhone() {
+  var numberValidCharacters = new RegExp(/^\d{9}\s$/g);
+  if (phoneInput.value.match(numberValidCharacters)) {
+    return true;
+  } else {
+    alert('Phone number need to to have 9 digits and no spaces!');
+    return false;
+  }
+}
+
+
