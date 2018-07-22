@@ -87,21 +87,30 @@ function createEditFormInputs(parentNode, contact) {
   var saveButton = document.createElement('button');
   saveButton.innerHTML = 'Save edits';
   saveButton.classList.add('edit-button');
+  saveButton.classList.add('save-button');
   var inputFirstName = document.createElement('input');
   inputFirstName.value = contact.firstName;
+  inputFirstName.classList.add('edit-input');
   var inputLastName = document.createElement('input');
   inputLastName.value = contact.lastName;
+  inputLastName.classList.add('edit-input');
   var inputPhone = document.createElement('input');
   inputPhone.value = contact.phoneNumber;
+  inputPhone.classList.add('edit-input');
   var inputMail = document.createElement('input');
   inputMail.value = contact.email;
+  inputMail.classList.add('edit-input');
   parentNode.append(inputFirstName);
   parentNode.append(inputLastName);
   parentNode.append(inputPhone);
   parentNode.append(inputMail);
   parentNode.append(saveButton);
   saveButton.addEventListener('click', function() {
-    updateContact(contact.id, inputFirstName.value, inputLastName.value, inputPhone.value, inputMail.value)
+    if (!validateEditedContact()) {
+      updateContact(contact.id, inputFirstName.value, inputLastName.value, inputPhone.value, inputMail.value)
+    } else {
+      alert('Fill all fields to edit contact!')
+    }
   });
 }
 
@@ -180,4 +189,13 @@ function validateAddedContact() {
   } else {
     addContact();
   }
+}
+
+function validateEditedContact() {
+  var editInputs = Array.from(document.querySelectorAll('.edit-input'));
+  var editInputsValues = editInputs.map(input => input.value);
+  var everyAreFilled = function(input) {
+    return input === '';
+  };
+  return editInputsValues.some(everyAreFilled)
 }
