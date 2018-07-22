@@ -27,6 +27,13 @@
       "phoneNumber": "000 456",
       "email": "gloro@btw.pl",
       "id": 16
+    },
+    {
+      "firstName": "Tomek",
+      "lastName": "Burak",
+      "phoneNumber": "456 897 121",
+      "email": "burek@burek.pl",
+      "id": 17
     }
   ]
 }

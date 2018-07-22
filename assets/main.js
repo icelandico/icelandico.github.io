@@ -58,7 +58,8 @@ function putTextInNode(name, phone, mail, contact) {
 
 function createDeleteContactButton(button, contact) {
  button.classList.add('delete-single-contact');
- button.innerHTML = 'Remove contact';
+ button.classList.add('edit-button');
+ button.innerHTML = 'Remove';
  button.addEventListener('click', function() {
     removeContact(contact.id)
   });
@@ -66,7 +67,8 @@ function createDeleteContactButton(button, contact) {
 
 function createEditContactButton(button, contact) {
   button.classList.add('edit-single-contact');
-  button.innerHTML = 'Edit contact';
+  button.classList.add('edit-button');
+  button.innerHTML = 'Edit';
   button.addEventListener('click', function() {
     createEditContactForm(contact)
   })

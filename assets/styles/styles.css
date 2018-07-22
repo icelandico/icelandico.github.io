@@ -1,0 +1,45 @@
+.menu-buttons {
+    background: darkgrey;
+}
+.input-item,
+.form-label {
+    display: block;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.add-contact {
+    padding: 5px;
+}
+
+.contacts-container {
+    margin: 5% auto;
+    text-align: center;
+}
+
+#contacts {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 40%;
+}
+
+li {
+    margin: 2%;
+    list-style: none;
+    padding: 5px;
+    background: #768b72;
+    border: 2px solid #000000;
+    border-radius: 15px;
+}
+
+.edit-button {
+    margin: 1%;
+    width: 80px;
+    background: #b2c7ae;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.edit-button:hover {
+    background: #7f947b
+}
