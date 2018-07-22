@@ -4,8 +4,6 @@ var lastNameInput = document.querySelector('#last-name');
 var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
-var inputs = Array.from(document.querySelectorAll('.input-form'));
-var contactsVar;
 
 syncContacts();
 
@@ -30,8 +28,7 @@ function displayContacts(contacts) {
   contacts.sort(sortContacts);
   contacts.forEach(function (contact) {
     createContactStructure(contact)
-  })
-  contactsVar = contacts
+  });
 }
 
 function createContactStructure(contact) {
@@ -80,37 +77,48 @@ function createEditContactForm(contact) {
   var listItem = document.getElementById(contact.id);
   editForm.classList.add('contact-edit');
   createEditFormInputs(editForm, contact);
-  editForm.append(createSaveEditsOption());
   listItem.append(editForm);
   return editForm
 }
 
 function createEditFormInputs(parentNode, contact) {
+  var saveButton = document.createElement('button');
+  saveButton.innerHTML = 'Save edits';
   var inputFirstName = document.createElement('input');
-  inputFirstName.id = 'firstName';
   inputFirstName.value = contact.firstName;
   var inputLastName = document.createElement('input');
-  inputLastName.id = 'lastName';
   inputLastName.value = contact.lastName;
   var inputPhone = document.createElement('input');
-  inputPhone.id = 'phone';
   inputPhone.value = contact.phoneNumber;
   var inputMail = document.createElement('input');
-  inputMail.id = 'mail';
   inputMail.value = contact.email;
   parentNode.append(inputFirstName);
   parentNode.append(inputLastName);
   parentNode.append(inputPhone);
-  parentNode.append(inputMail)
+  parentNode.append(inputMail);
+  parentNode.append(saveButton);
+  saveButton.addEventListener('click', function() {
+    updateContact(contact.id, inputFirstName.value, inputLastName.value, inputPhone.value, inputMail.value)
+  });
 }
 
-function createSaveEditsOption(contact) {
-  var saveButton = document.createElement('button');
-  saveButton.innerHTML = 'Save edits';
-  saveButton.addEventListener('click', function() {
-    updateContact(contact.id, firstName, lastName, phone, email)
-  });
-  return saveButton
+function updateContact(contactId, firstName, lastName, phone, mail) {
+  var updatedContact = {
+    firstName: firstName,
+    lastName: lastName,
+    phoneNumber: phone,
+    email: mail
+  };
+  console.log(firstName, lastName, phone, mail)
+  fetch(
+    'http://localhost:3000/contacts/' + contactId, {
+      method: 'PATCH',
+      body: JSON.stringify(updatedContact),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  ).then(syncContacts)
 }
 
 function addContact() {
