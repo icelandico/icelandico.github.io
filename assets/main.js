@@ -10,8 +10,12 @@ var emailInput = document.querySelector('#mail');
 syncContacts();
 
 addContactButton.addEventListener('click', validateAddedContact);
-phoneInput.addEventListener('focusout', validatePhone);
-mailInput.addEventListener('focusout', validateMail);
+phoneInput.addEventListener('focusout', function() {
+  validatePhone(phoneInput.value)
+});
+emailInput.addEventListener('focusout', function() {
+  validateMail(emailInput.value)
+});
 
 function getContacts() {
   return fetch (
@@ -109,11 +113,17 @@ function createEditFormInputs(parentNode, contact) {
   parentNode.append(inputPhone);
   parentNode.append(inputMail);
   parentNode.append(saveButton);
+  inputPhone.addEventListener('focusout', function() {
+    validatePhone(inputPhone.value)
+  });
+  inputMail.addEventListener('focusout', function() {
+    validateMail(inputMail.value)
+  });
   saveButton.addEventListener('click', function() {
     if (!validateEditedContact()) {
       updateContact(contact.id, inputFirstName.value, inputLastName.value, inputPhone.value, inputMail.value)
     } else {
-      alert('Fill all fields to edit contact!')
+      alert('Fill all fields and check them to edit contact!')
     }
   });
 }
@@ -204,11 +214,11 @@ function validateEditedContact() {
   return editInputsValues.some(everyAreFilled)
 }
 
-function validatePhone() {
+function validatePhone(phoneInput) {
   var numberValidCharacters = new RegExp(/^\d{9}$/g);
-  if (phoneInput.value.match(numberValidCharacters)) {
+  if (phoneInput.match(numberValidCharacters)) {
     return true
-  } else if (phoneInput.value === '') {
+  } else if (phoneInput === '') {
     return true
   } else {
     alert('Phone number need to to have 9 digits and no spaces!');
@@ -216,16 +226,16 @@ function validatePhone() {
   }
 }
 
-function validateMail() {
+function validateMail(mailInput) {
   var emailValidCharacters = new RegExp(/[a-z0-9._]+@[a-z0-9.-]+\.[a-z]/gi);
-  if (mailInput.value.match(emailValidCharacters)) {
+  if (mailInput.match(emailValidCharacters)) {
     return true
-  } else if (mailInput.value === '') {
-    return true
+  } else if (mailInput === '') {
+      return true
   } else {
       alert ('Enter a valid email address!');
       return true
-    }
+  }
 }
 
 
