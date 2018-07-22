@@ -1,6 +1,9 @@
 .menu-buttons {
-    background: darkgrey;
+    background: #2c3e50;
+    padding: 15px;
+    color: #ecf0f1;
 }
+
 .input-item,
 .form-label {
     display: block;
@@ -13,7 +16,7 @@
 }
 
 .contacts-container {
-    margin: 5% auto;
+    margin: 1% auto;
     text-align: center;
 }
 
@@ -27,19 +30,42 @@ li {
     margin: 2%;
     list-style: none;
     padding: 5px;
-    background: #768b72;
+    background: #bdc3c7;
     border: 2px solid #000000;
     border-radius: 15px;
 }
 
-.edit-button {
+.edit-button, .add-contact {
     margin: 1%;
-    width: 80px;
-    background: #b2c7ae;
+    min-width: 80px;
+    background: #ecf0f1;
     border: 1px solid #000000;
-    border-radius: 5px;
+    border-radius: 4px;
+    transition: 0.5s;
+    padding: 8px;
 }
 
 .edit-button:hover {
-    background: #7f947b
+    background: #2c3e50;
+}
+
+.add-contact:hover {
+    background: #bdc3c7;
+}
+
+.menu-input, .contact-edit > input {
+    background: #ecf0f1;
+    border: 1px solid #000;
+    border-radius: 7px;
+}
+
+.add-contact {
+    margin: 0 auto;
+    width: 120px;
+}
+
+.contact-edit > input {
+    width: 100px;
+    font-size: 12px;
+    padding-left: 10px;
 }

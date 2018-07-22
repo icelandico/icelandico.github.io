@@ -86,6 +86,7 @@ function createEditContactForm(contact) {
 function createEditFormInputs(parentNode, contact) {
   var saveButton = document.createElement('button');
   saveButton.innerHTML = 'Save edits';
+  saveButton.classList.add('edit-button');
   var inputFirstName = document.createElement('input');
   inputFirstName.value = contact.firstName;
   var inputLastName = document.createElement('input');
