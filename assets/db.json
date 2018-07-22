@@ -34,6 +34,13 @@
       "phoneNumber": "999 888 048",
       "email": "janek@o2.pl",
       "id": 17
+    },
+    {
+      "firstName": "Grzegorz",
+      "lastName": "Krychowiak",
+      "phoneNumber": "123 54 123",
+      "email": "krycha@krychu.pl",
+      "id": 18
     }
   ]
 }

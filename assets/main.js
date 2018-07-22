@@ -7,7 +7,7 @@ var addContactButton = document.querySelector('.add-contact');
 
 syncContacts();
 
-addContactButton.addEventListener('click', addContact);
+addContactButton.addEventListener('click', validateAddedContact);
 
 function getContacts() {
   return fetch (
@@ -167,4 +167,17 @@ function sortContacts(contactA, contactB) {
     return 1;
   }
   return 0;
+}
+
+function validateAddedContact() {
+  var inputs = Array.from(document.querySelectorAll('.menu-input'));
+  var inputsValues = inputs.map(input => input.value);
+  var everyAreFilled = function(input) {
+    return input === '';
+  };
+  if (inputsValues.some(everyAreFilled)) {
+    alert('Fill all fields!')
+  } else {
+    addContact();
+  }
 }
