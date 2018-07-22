@@ -1,38 +1,38 @@
 {
   "contacts": [
     {
-      "firstName": "Grzegorz",
-      "lastName": "Brzęczyszcykiewicz",
-      "phoneNumber": "123 098",
-      "email": "bret@yahh.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "phoneNumber": "12 456 123",
+      "email": "doejohhny@yahoo.com",
       "id": 12
     },
     {
-      "firstName": "Arnold",
-      "lastName": "Ursus",
-      "phoneNumber": "456 321 485",
-      "email": "m.zawada@gmail.pl",
+      "firstName": "Władek",
+      "lastName": "Szpilman",
+      "phoneNumber": "555 666 444",
+      "email": "szpil@man.com",
       "id": 14
     },
     {
-      "firstName": "Jarek",
-      "lastName": "Cieciora",
-      "phoneNumber": "888",
-      "email": "cieciu@onet.pl",
+      "firstName": "Czesław",
+      "lastName": "Niemen",
+      "phoneNumber": "888 999",
+      "email": "niemen@niemen.com",
       "id": 15
     },
     {
-      "firstName": "Florian",
-      "lastName": "Xerdan",
-      "phoneNumber": "000 456",
-      "email": "gloro@btw.pl",
+      "firstName": "Xerdan",
+      "lastName": "Shaqiri",
+      "phoneNumber": "888 416 131",
+      "email": "xerd@alban.com",
       "id": 16
     },
     {
-      "firstName": "Tomek",
-      "lastName": "Burak",
-      "phoneNumber": "456 897 121",
-      "email": "burek@burek.pl",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "phoneNumber": "999 888 048",
+      "email": "janek@o2.pl",
       "id": 17
     }
   ]
