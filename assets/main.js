@@ -38,7 +38,7 @@ function createContactStructure(contact) {
   var email = document.createElement('p');
   var deleteContactButton = document.createElement('button');
   var editContactButton = document.createElement('button');
-  contactElement.id = contact.id
+  contactElement.id = contact.id;
   putTextInNode(name, phoneNumber, email, contact);
   createDeleteContactButton(deleteContactButton, contact);
   createEditContactButton(editContactButton, contact);
@@ -109,7 +109,6 @@ function updateContact(contactId, firstName, lastName, phone, mail) {
     phoneNumber: phone,
     email: mail
   };
-  console.log(firstName, lastName, phone, mail)
   fetch(
     'http://localhost:3000/contacts/' + contactId, {
       method: 'PATCH',

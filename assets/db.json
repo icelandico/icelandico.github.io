@@ -1,13 +1,6 @@
 {
   "contacts": [
     {
-      "firstName": "Bolesław",
-      "lastName": "Śmiały",
-      "phoneNumber": "901 123",
-      "email": "smialy@wp.pl",
-      "id": 9
-    },
-    {
       "firstName": "Grzegorz",
       "lastName": "Brzęczyszcykiewicz",
       "phoneNumber": "123 098",
@@ -15,11 +8,25 @@
       "id": 12
     },
     {
-      "firstName": "Ferdynand",
-      "lastName": "Ciecierzyca",
-      "phoneNumber": "000222",
-      "email": "asdWiu@pl",
-      "id": 13
+      "firstName": "Arnold",
+      "lastName": "Zawada",
+      "phoneNumber": "456 321 485",
+      "email": "m.zawada@gmail.pl",
+      "id": 14
+    },
+    {
+      "firstName": "Jarek",
+      "lastName": "Cieciora",
+      "phoneNumber": "888",
+      "email": "cieciu@onet.pl",
+      "id": 15
+    },
+    {
+      "firstName": "Florian",
+      "lastName": "Xerdan",
+      "phoneNumber": "000 456",
+      "email": "gloro@btw.pl",
+      "id": 16
     }
   ]
 }
