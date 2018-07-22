@@ -5,11 +5,13 @@ var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
 var phoneInput = document.querySelector('#phone');
+var emailInput = document.querySelector('#mail');
 
 syncContacts();
 
 addContactButton.addEventListener('click', validateAddedContact);
 phoneInput.addEventListener('focusout', validatePhone);
+mailInput.addEventListener('focusout', validateMail);
 
 function getContacts() {
   return fetch (
@@ -203,13 +205,27 @@ function validateEditedContact() {
 }
 
 function validatePhone() {
-  var numberValidCharacters = new RegExp(/^\d{9}\s$/g);
+  var numberValidCharacters = new RegExp(/^\d{9}$/g);
   if (phoneInput.value.match(numberValidCharacters)) {
-    return true;
+    return true
+  } else if (phoneInput.value === '') {
+    return true
   } else {
     alert('Phone number need to to have 9 digits and no spaces!');
-    return false;
+    return true
   }
+}
+
+function validateMail() {
+  var emailValidCharacters = new RegExp(/[a-z0-9._]+@[a-z0-9.-]+\.[a-z]/gi);
+  if (mailInput.value.match(emailValidCharacters)) {
+    return true
+  } else if (mailInput.value === '') {
+    return true
+  } else {
+      alert ('Enter a valid email address!');
+      return true
+    }
 }
 
 
