@@ -41,7 +41,7 @@ function createContactStructure(contact) {
   var email = document.createElement('p');
   var deleteContactButton = document.createElement('button');
   var editContactButton = document.createElement('button');
-  var editPanel = createEditContactForm(contact);
+  contactElement.id = contact.id
   putTextInNode(name, phoneNumber, email, contact);
   createDeleteContactButton(deleteContactButton, contact);
   createEditContactButton(editContactButton, contact);
@@ -50,7 +50,6 @@ function createContactStructure(contact) {
   contactElement.append(email);
   contactElement.append(deleteContactButton);
   contactElement.append(editContactButton);
-  contactElement.append(editPanel);
   contactsContainer.append(contactElement)
 }
 
@@ -72,28 +71,37 @@ function createEditContactButton(button, contact) {
   button.classList.add('edit-single-contact');
   button.innerHTML = 'Edit contact';
   button.addEventListener('click', function() {
-    showEditContactForm(contact.id)
+    createEditContactForm(contact)
   })
 }
 
 function createEditContactForm(contact) {
   var editForm = document.createElement('div');
+  var listItem = document.getElementById(contact.id);
   editForm.classList.add('contact-edit');
-  editForm.classList.add('hidden');
-  editForm.id = contact.id;
-  createEditFormInputs(editForm);
+  createEditFormInputs(editForm, contact);
   editForm.append(createSaveEditsOption());
+  listItem.append(editForm);
   return editForm
 }
 
-function createEditFormInputs(parentNode) {
-  inputs.forEach(function (item) {
-    var label = document.createElement('label');
-    var input = document.createElement('input');
-    label.innerText = item.innerText;
-    label.appendChild(input);
-    parentNode.appendChild(label)
-  });
+function createEditFormInputs(parentNode, contact) {
+  var inputFirstName = document.createElement('input');
+  inputFirstName.id = 'firstName';
+  inputFirstName.value = contact.firstName;
+  var inputLastName = document.createElement('input');
+  inputLastName.id = 'lastName';
+  inputLastName.value = contact.lastName;
+  var inputPhone = document.createElement('input');
+  inputPhone.id = 'phone';
+  inputPhone.value = contact.phoneNumber;
+  var inputMail = document.createElement('input');
+  inputMail.id = 'mail';
+  inputMail.value = contact.email;
+  parentNode.append(inputFirstName);
+  parentNode.append(inputLastName);
+  parentNode.append(inputPhone);
+  parentNode.append(inputMail)
 }
 
 function createSaveEditsOption(contact) {
@@ -103,14 +111,6 @@ function createSaveEditsOption(contact) {
     updateContact(contact.id, firstName, lastName, phone, email)
   });
   return saveButton
-}
-
-function showEditContactForm(item) {
-  var clickedDiv = document.getElementById(item);
-  var editForms = Array.from(document.querySelectorAll('.contact-edit'));
-  clickedDiv.classList.toggle('hidden');
-  editForms.forEach(div => div.id === clickedDiv.id ? true : div.classList.add('hidden'));
-
 }
 
 function addContact() {
