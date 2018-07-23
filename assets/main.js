@@ -49,7 +49,7 @@ function createContactStructure(contact) {
   contactElement.id = contact.id;
   putTextInNode(name, phoneNumber, email, contact);
   createDeleteContactButton(deleteContactButton, contact);
-  createEditContactButton(editContactButton, contact);
+  createEditContactButton(editContactButton, contact, contactElement);
   contactElement.append(name);
   contactElement.append(phoneNumber);
   contactElement.append(email);
@@ -73,12 +73,17 @@ function createDeleteContactButton(button, contact) {
   });
 }
 
-function createEditContactButton(button, contact) {
+function createEditContactButton(button, contact, parentNode) {
   button.classList.add('edit-single-contact');
   button.classList.add('edit-button');
   button.innerHTML = 'Edit';
   button.addEventListener('click', function() {
-    createEditContactForm(contact)
+    var editPanelDiv = document.querySelector('.contact-edit');
+    if (!document.body.contains(editPanelDiv)) {
+      createEditContactForm(contact)
+    } else {
+      parentNode.removeChild(editPanelDiv)
+    }
   })
 }
 
@@ -237,5 +242,7 @@ function validateMail(mailInput) {
       return true
   }
 }
+
+
 
 
