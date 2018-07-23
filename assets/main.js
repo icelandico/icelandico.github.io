@@ -1,7 +1,6 @@
 var contactsContainer = document.getElementById('contacts');
 var firstNameInput = document.querySelector('#first-name');
 var lastNameInput = document.querySelector('#last-name');
-var phoneInput = document.querySelector('#phone');
 var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
 var phoneInput = document.querySelector('#phone');
@@ -257,7 +256,3 @@ function validateMail(mailInput) {
       return true
   }
 }
-
-
-
-
