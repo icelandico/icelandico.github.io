@@ -57,6 +57,7 @@ li {
     background: #ecf0f1;
     border: 1px solid #000;
     border-radius: 7px;
+    height: 25px;
 }
 
 .add-contact, .remove-contact {
@@ -67,6 +68,10 @@ li {
 .contact-edit > input {
     width: 100px;
     font-size: 12px;
+    padding-left: 10px;
+}
+
+.menu-input {
     padding-left: 10px;
 }
 
