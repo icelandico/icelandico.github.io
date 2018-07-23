@@ -6,6 +6,7 @@ var mailInput = document.querySelector('#mail');
 var addContactButton = document.querySelector('.add-contact');
 var phoneInput = document.querySelector('#phone');
 var emailInput = document.querySelector('#mail');
+var removeSelectedContactsButton = document.querySelector('.remove-contact');
 
 syncContacts();
 
@@ -15,6 +16,14 @@ phoneInput.addEventListener('focusout', function() {
 });
 emailInput.addEventListener('focusout', function() {
   validateMail(emailInput.value)
+});
+
+removeSelectedContactsButton.addEventListener('click', function() {
+  var selectedContacts = document.querySelectorAll('.checkbox:checked');
+  selectedContacts.forEach(function (selectedItem) {
+    var contactId = selectedItem.getAttribute('id');
+    removeContact(contactId)
+  })
 });
 
 function getContacts() {
@@ -41,6 +50,11 @@ function displayContacts(contacts) {
 
 function createContactStructure(contact) {
   var contactElement = document.createElement('li');
+  var deleteCheckbox = document.createElement('input');
+  deleteCheckbox.type = 'checkbox';
+  deleteCheckbox.classList.add('checkbox');
+  deleteCheckbox.title = 'Select to remove';
+  deleteCheckbox.id = contact.id;
   var name = document.createElement('h1');
   var phoneNumber = document.createElement('p');
   var email = document.createElement('p');
@@ -55,6 +69,7 @@ function createContactStructure(contact) {
   contactElement.append(email);
   contactElement.append(deleteContactButton);
   contactElement.append(editContactButton);
+  contactElement.append(deleteCheckbox);
   contactsContainer.append(contactElement)
 }
 

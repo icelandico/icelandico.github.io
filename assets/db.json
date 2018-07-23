@@ -1,13 +1,6 @@
 {
   "contacts": [
     {
-      "firstName": "John",
-      "lastName": "Doe",
-      "phoneNumber": "123321123",
-      "email": "doey@yahoo.com",
-      "id": 12
-    },
-    {
       "firstName": "Władek",
       "lastName": "Szpilman",
       "phoneNumber": "555 666 444",
@@ -27,13 +20,6 @@
       "phoneNumber": "888 416 131",
       "email": "xerd@alban.com",
       "id": 16
-    },
-    {
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "phoneNumber": "999852641",
-      "email": "janek@o2.pl",
-      "id": 17
     },
     {
       "firstName": "Grzegorz",

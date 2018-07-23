@@ -69,3 +69,11 @@ li {
     font-size: 12px;
     padding-left: 10px;
 }
+
+.checkbox {
+    font-size: 15px;
+    display: inline-block;
+    margin: 3% auto;
+    height: 15px;
+    width: 15px;
+}
