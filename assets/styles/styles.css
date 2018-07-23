@@ -35,7 +35,7 @@ li {
     border-radius: 15px;
 }
 
-.edit-button, .add-contact {
+.edit-button, .add-contact, .remove-contact {
     margin: 1%;
     min-width: 80px;
     background: #ecf0f1;
@@ -49,8 +49,8 @@ li {
     background: #2c3e50;
 }
 
-.add-contact:hover {
-    background: #bdc3c7;
+.add-contact:hover, .remove-contact:hover {
+    background: #90969a;
 }
 
 .menu-input, .contact-edit > input {
@@ -59,8 +59,8 @@ li {
     border-radius: 7px;
 }
 
-.add-contact {
-    margin: 0 auto;
+.add-contact, .remove-contact {
+    margin: 1% auto;
     width: 120px;
 }
 
