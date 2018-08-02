@@ -10,6 +10,14 @@ class AppHeader extends React.Component {
   }
 }
 
+class Footer extends React.Component {
+  render() {
+    return (
+      <div><button className="clickElement" onClick={() => alert('Author thanks You for support!')}>High five for Author!</button></div>
+    )
+  }
+}
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -126,6 +134,9 @@ class Game extends React.Component {
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
+        </div>
+        <div>
+          <Footer/>
         </div>
       </div>
     );

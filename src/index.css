@@ -58,10 +58,11 @@ button {
   align-items: center;
   justify-content: center;
   margin-top: 5%;
+  height: 500px;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-left: 5%;
 }
 
 .game-board {
@@ -70,3 +71,4 @@ button {
   border-radius: 15px;
   box-shadow: 5px 5px #222222;
 }
+
