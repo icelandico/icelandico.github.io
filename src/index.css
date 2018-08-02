@@ -1,10 +1,7 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
-}
-
-#root {
-  height: 90vh;
+  text-align: center;
 }
 
 ol, ul {
@@ -60,7 +57,7 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  margin-top: 5%;
 }
 
 .game-info {
@@ -69,8 +66,7 @@ button {
 
 .game-board {
   background: #6888a3;
-  padding: 3%;
+  padding: 2%;
   border-radius: 15px;
   box-shadow: 5px 5px #222222;
 }
-
