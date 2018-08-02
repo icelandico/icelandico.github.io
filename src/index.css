@@ -72,3 +72,7 @@ button {
   box-shadow: 5px 5px #222222;
 }
 
+.clickElement {
+  height: 50px;
+  width: 150px;
+}
