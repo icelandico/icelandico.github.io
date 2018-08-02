@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+class AppHeader extends React.Component {
+  render() {
+    return (
+      <h1 className="main-header">Tic-Tac-Toe Game</h1>
+    )
+  }
+}
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -11,7 +19,6 @@ function Square(props) {
 }
 
 class Board extends React.Component {
-
   renderSquare(i) {
     return (
       <Square
@@ -103,17 +110,22 @@ class Game extends React.Component {
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-
+      <div>
+        <div>
+          <AppHeader/>
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
+        <div className="game">
+          <div className="game-board">
+            <Board
+              squares={current.squares}
+              onClick={(i) => this.handleClick(i)}
+            />
+
+          </div>
+          <div className="game-info">
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
       </div>
     );
@@ -146,5 +158,6 @@ ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
+
 
 
