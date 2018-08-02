@@ -3,6 +3,10 @@ body {
   margin: 20px;
 }
 
+#root {
+  height: 90vh;
+}
+
 ol, ul {
   padding-left: 30px;
 }
@@ -17,6 +21,17 @@ ol, ul {
   margin-bottom: 10px;
 }
 
+button {
+  background: #6888a3;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  padding: 5px;
+  margin-top: 5px;
+  width: 120px;
+  box-shadow: 2px 2px #222222;
+  color: #fff;
+}
+
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -25,11 +40,11 @@ ol, ul {
   font-weight: bold;
   line-height: 34px;
   height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
   padding: 0;
   text-align: center;
   width: 34px;
+  margin: 5px;
+  color: #222222;
 }
 
 .square:focus {
@@ -43,8 +58,19 @@ ol, ul {
 .game {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .game-info {
   margin-left: 20px;
 }
+
+.game-board {
+  background: #6888a3;
+  padding: 3%;
+  border-radius: 15px;
+  box-shadow: 5px 5px #222222;
+}
+
